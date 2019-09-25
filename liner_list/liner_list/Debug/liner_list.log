@@ -1,3 +1,2 @@
 ﻿  test.c
-e:\github\myrepository\practice\liner_list\liner_list\test.c(22): warning C4133: “函数”: 从“int *”到“const char *const ”的类型不兼容
-  liner_list.vcxproj -> E:\GitHub\MyRepository\practice\liner_list\Debug\liner_list.exe
+  liner_list.vcxproj -> E:\GitHub\MyRepository\data_structure\liner_list\Debug\liner_list.exe

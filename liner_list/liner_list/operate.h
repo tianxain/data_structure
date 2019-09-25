@@ -36,6 +36,9 @@ int ListDelete_Sq(SqList *L, int i, ElemType *e);
 //合并LA，LB，结果保存到A
 void Union(SqList *LA, SqList LB);
 
+//归并LA，LB为一个新表LC,仍按非值有序递减
+void MergList(SqList LA, SqList LB, SqList *LC);
+
 //判定是否为空表ListEmpty(L)
 int ListEmpty(SqList *L);
 
@@ -43,7 +46,7 @@ int ListEmpty(SqList *L);
 int ListLength(SqList *L);
 
 //求某个数据元素值GetElem(L,i,e)
-int GetElem(SqList *L, int i, ElemType *e);
+int GetElem(SqList L, int i, ElemType *e);
 
 //按元素值查找LocateElem(L,e)
 int LocateElem(SqList *L, ElemType e);
