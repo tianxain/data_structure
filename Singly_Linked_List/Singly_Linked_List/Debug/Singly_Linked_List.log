@@ -1,3 +1,2 @@
-﻿  operate.c
-e:\github\myrepository\practice\singly_linked_list\singly_linked_list\operate.c(20): warning C4715: “GetElem”: 不是所有的控件路径都返回值
-LINK : fatal error LNK1561: 必须定义入口点
+﻿  test.c
+  Singly_Linked_List.vcxproj -> E:\GitHub\MyRepository\data_structure\Singly_Linked_List\Debug\Singly_Linked_List.exe

@@ -23,3 +23,11 @@ ElemType  ListInsert_L(LinkList *L, int i, ElemType e);
 
 //顺序表的删除,在L中删除第i个元素，并用e返回
 ElemType  ListDelete_L(LinkList *L, int i, ElemType *e);
+
+//从表尾到表头逆向建立单链表
+void CreateList_L(LinkList *L,int n);
+
+//尾插法创建链表
+void CreatList_L1(LinkList *L, int n);
+
+void MergeLsit(LinkList *LA, LinkList *LB, LinkList *LC);
