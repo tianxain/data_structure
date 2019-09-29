@@ -27,6 +27,9 @@ ElemType  ListDelete_L(LinkList *L, int i, ElemType *e);
 //从表尾到表头逆向建立单链表
 void CreateList_L(LinkList *L,int n);
 
+//头插法创建链表
+void CreatList_L2(LinkList *L, int n);
+
 //尾插法创建链表
 void CreatList_L1(LinkList *L, int n);
 

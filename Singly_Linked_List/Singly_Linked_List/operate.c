@@ -125,3 +125,19 @@ void MergeLsit(LinkList *LA, LinkList *LB, LinkList *LC)
 	pc->next = pa ? pa : pb;
 	free(LB);
 }
+
+//头插法创建链表
+void CreatList_L2(LinkList *L, int n)
+{
+	//头插法创建链表
+	(*L) = (LinkList)malloc(sizeof(LNode));
+	(*L)->next = NULL;         //头插法一定加上这句
+	LinkList s;
+	for (int i = 0; i < n; i++)
+	{
+		s = (LinkList)malloc(sizeof(LNode));//生成新节点
+		scanf("%d", &s->data);
+		s->next = (*L)->next;   //将新开辟的节点查到头节点后面
+		(*L)->next = s;
+	}
+}
