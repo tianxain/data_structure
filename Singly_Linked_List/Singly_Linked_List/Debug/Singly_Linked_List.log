@@ -1,2 +1,3 @@
 ﻿  test.c
+e:\github\myrepository\data_structure\singly_linked_list\singly_linked_list\test.c(7): warning C4101: “s”: 未引用的局部变量
   Singly_Linked_List.vcxproj -> E:\GitHub\MyRepository\data_structure\Singly_Linked_List\Debug\Singly_Linked_List.exe

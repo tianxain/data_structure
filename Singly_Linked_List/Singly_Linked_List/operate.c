@@ -2,7 +2,7 @@
 #include"operate.h"
 
 //用e返回L中第i个元素的值
-ElemType GetElem(LinkList L, int i, ElemType *e)
+int GetElem(LinkList L, int i, ElemType *e)
 {
 	LNode *p;
 	int j = 1; //计数器
@@ -21,7 +21,7 @@ ElemType GetElem(LinkList L, int i, ElemType *e)
 }
 
 //顺序表的插入,在L中第i个位置之前插入新的元素e
-ElemType  ListInsert_L(LinkList *L, int i, ElemType e)
+int  ListInsert_L(LinkList *L, int i, ElemType e)
 {
 	LinkList p = *L;
 	LinkList s;
@@ -43,7 +43,7 @@ ElemType  ListInsert_L(LinkList *L, int i, ElemType e)
 }
 
 //顺序表的删除,在L中删除第i个元素，并用e返回
-ElemType  ListDelete_L(LinkList *L, int i, ElemType *e)
+int  ListDelete_L(LinkList *L, int i, ElemType *e)
 {
 	LinkList p = *L;
 	LinkList q;
@@ -99,14 +99,14 @@ void CreatList_L1(LinkList *L, int n)
 
 }
 
-void MergeLsit(LinkList *LA, LinkList *LB, LinkList *LC)
+void MergeLsit(LinkList LA, LinkList LB, LinkList *LC)
 {
 	LinkList pa;
 	LinkList pb;
 	LinkList pc;
-	pa = (*LA)->next;
-	pb = (*LB)->next;
-	LC = pc = LA;
+	pa = LA->next;
+	pb = LB->next;
+	*LC = pc = LA;
 	while (pa&&pb)
 	{
 		if (pa->data <= pb->data)
@@ -141,3 +141,22 @@ void CreatList_L2(LinkList *L, int n)
 		(*L)->next = s;
 	}
 }
+
+
+//查询链表第i个位置的元素，并返回其值：
+int GetElem_L(LinkList L, int i, ElemType *e)
+{
+	//L为带头节点的单链表的头指针
+		//第i个元素存在时，其值赋给e并返回OK，否则返回ERROR
+	LinkList p = L;   //初始化，p指向第1个节点
+	int j = 0;        //计数器
+	while (p && j < i) //顺时针向后查找，直到p指向第i个元素或p为空
+	{
+		p = p->next;
+		j++;
+	}
+	if (!p || j > i)   //第i个元素不存在
+		return ERROR;
+	*e = p->data;      //取第i个元素
+	return OK;
+}//GetElem_L

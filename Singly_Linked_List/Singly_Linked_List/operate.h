@@ -15,14 +15,14 @@ typedef struct LNode
 }LNode,*LinkList;
 
 //用e返回L中第i个元素的值
-ElemType GetElem(LinkList L,int i,ElemType *e);
+int GetElem(LinkList L,int i,ElemType *e);
 
 //顺序表的插入,在L中第i个位置之前插入新的元素e
-ElemType  ListInsert_L(LinkList *L, int i, ElemType e);
+int  ListInsert_L(LinkList *L, int i, ElemType e);
 
 
 //顺序表的删除,在L中删除第i个元素，并用e返回
-ElemType  ListDelete_L(LinkList *L, int i, ElemType *e);
+int  ListDelete_L(LinkList *L, int i, ElemType *e);
 
 //从表尾到表头逆向建立单链表
 void CreateList_L(LinkList *L,int n);
@@ -33,4 +33,7 @@ void CreatList_L2(LinkList *L, int n);
 //尾插法创建链表
 void CreatList_L1(LinkList *L, int n);
 
-void MergeLsit(LinkList *LA, LinkList *LB, LinkList *LC);
+void MergeLsit(LinkList LA, LinkList LB, LinkList *LC);
+
+//查询链表第i个位置的元素，并返回其值：
+int GetElem_L(LinkList L, int i, ElemType *e);
