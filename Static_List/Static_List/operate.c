@@ -83,7 +83,7 @@ int StaticLinkListInsert(SLinkList L, int i, int e)
 
 }
 
-int StaticLinkListDelete(StaticLinkList L, int i, int *key)
+int StaticLinkListDelete(SLinkList L, int i, int *key)
 {
 	if (i < 1 || i >= StaticLinkListLength(L))
 	{
@@ -97,12 +97,12 @@ int StaticLinkListDelete(StaticLinkList L, int i, int *key)
 	int j = L[k].cur;
 	*key = L[j].data;
 	L[k].cur = L[j].cur;
-	Free(L, j);
+	//Free(L, j);
 	return true;
 }
 
 //±éÀú
-void StaticLinkListTraverse(StaticLinkList L)
+void StaticLinkListTraverse(SLinkList L)
 {
 	int k = MAXSIZE - 1;
 	while (L[k].cur)
