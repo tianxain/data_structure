@@ -7,21 +7,25 @@ void Show(int *arr, int len);
 //获取整形数组的最大值 默认arr非空
 int getMaxValue(const int *arr, int len);
 
-/*交换两个整形值*/
+//交换两个整形值
 void mySwap(int *pa, int *pb);
 
 //冒泡排序
-void BubbleSort_1(int *arr, int len);
-void BubbleSort_2(int *arr, int len);
+void BubbleSort_1(int *arr, int len);//(从小到大)
+void BubbleSort_2(int *arr, int len);//(从大到小)
 
-//选择排序
-void selectSort(int *arr, int bgn, int end);
+//基本选择排序
+void selectSort_1(int *arr, int len);//(从小到大)
+void selectSort_2(int *arr, int len);//(从到大小)
 
-/*快排*/
-void quickSort(int *arr, int bgn, int end);
 
-/*插入排序*/
-void insertSort(int *arr, int bgn, int end);
+//快速排序
+void quickSort_1(int *arr, int left, int right);//(从小到大)
+void quickSort_2(int *arr, int left, int right);//(从大到小)
+
+//插入排序
+void insertSort_1(int *arr, int bgn, int end);//(从小到大)
+void insertSort_2(int *arr, int bgn, int end);//(从大到小)
 
 /*希尔排序*/
 void shellSort(int *arr, int bgn, int end);

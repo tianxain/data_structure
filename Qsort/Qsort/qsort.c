@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include"qsort.h"
+//打印数组
 void Show(int *arr, int len)
 {
 	
@@ -25,7 +26,7 @@ int getMaxValue(const int *arr,int len)
 	return max;
 }
 
-/*交换两个整形值*/
+//交换两个整形值
 void mySwap(int *pa, int *pb)
 {
 	int tmp = *pa;
@@ -96,13 +97,16 @@ void BubbleSort_2(int *arr, int len)
 
 
 
-/*选择排序*/
-void selectSort(int *arr, int bgn, int end)
+//选择排序(从小到大)
+void selectSort_1(int *arr, int len)
 {
-	for (int i = bgn; i < end; ++i)
+	int i = 0;
+	int j = 0;
+	for (int i = 0; i < len; ++i)
 	{
 		int minIndex = i;
-		for (int j = i + 1; j < end; ++j)
+		// 找出最小值得元素下标
+		for (j = i + 1; j < len; j++)
 		{
 			if (arr[j] < arr[minIndex])
 				minIndex = j;
@@ -112,73 +116,111 @@ void selectSort(int *arr, int bgn, int end)
 	}
 }
 
-///*快排*/
-//void quickSort(int *arr, int bgn, int end)  //arr must be the reference of real param
-//{
-//	//数组arr空or仅有一个元素则退出
-//	if (bgn >= end - 1)
-//		return;
-//
-//	int lindex = bgn;
-//	int rindex = end - 1;
-//	int std = arr[lindex];
-//	while (lindex < rindex)
-//	{
-//		while (lindex < rindex)
-//		{
-//			if (arr[rindex] < std)
-//			{
-//				arr[lindex++] = arr[rindex];
-//				break;
-//			}
-//			--rindex;
-//		}
-//
-//		while (lindex < rindex)
-//		{
-//			if (arr[lindex] >= std)
-//			{
-//				arr[rindex--] = arr[lindex];
-//				break;
-//			}
-//			++lindex;
-//		}
-//	}
-//
-//	arr[lindex] = std;
-//	quickSort(arr, bgn, lindex);
-//	quickSort(arr, rindex + 1, end);
-//}
-//
-///*插入排序*/
-//void insertSort(int *arr, int bgn, int end)
-//{
-//	for (int i = bgn + 1; i < end; ++i)
-//	{
-//		/*
-//		* 分为1,2两部分处理，可以囊括j = beg - 1时的情况
-//		* 即需要将arr[i]插入到首元素前的位置，若使用一个for
-//		* 包括这两部分，则会在发生这种情况时退出
-//		*/
-//		/*1*/
-//		int j = i - 1;
-//		for (; j >= bgn; --j)
-//			if (arr[j] <= arr[i])
-//				break;
-//		/*2*/
-//		if (j != i - 1)
-//		{
-//			int temp = arr[i];
-//			for (int k = i; k > j + 1; --k)
-//			{
-//				arr[k] = arr[k - 1];
-//			}
-//			arr[j + 1] = temp;
-//		}
-//	}
-//}
-//
-//
+//选择排序(从大到小)
+void selectSort_2(int *arr, int len)
+{
+	int i = 0;
+	int j = 0;
+	for (i = 0; i < len; i++)
+	{
+		int maxIndex = i;
+		// 找出最大值得元素下标
+		for (j = i + 1; j < len; j++)
+		{
+			if (arr[j] > arr[maxIndex])
+			{
+				maxIndex = j;
+			}
+		}
+		if (maxIndex != i)
+			mySwap(&arr[i], &arr[maxIndex]);
+
+	}
+}
+
+
+//快速排序(从小到大)
+void quickSort_1(int *arr, int left, int right)
+{
+	int i, j, temp;
+	if (left >= right)
+		return;
+	temp = arr[left]; //temp中存的就是基准数
+	i = left;
+	j = right;
+	while (i != j)
+	{ //顺序很重要，要先从右边开始找
+		while (arr[j] >= temp && i < j)
+			j--;
+		while (arr[i] <= temp && i < j)//再找右边的
+			i++;
+		if (i < j)//交换两个数在数组中的位置
+		{
+			mySwap(&arr[i], &arr[j]);
+		}
+	}
+	//最终将基准数归位
+	arr[left] = arr[i];
+	arr[i] = temp;
+	quickSort_1(arr, left, i - 1);//继续处理左边的，这里是一个递归的过程
+	quickSort_1(arr, i + 1, right);//继续处理右边的 ，这里是一个递归的过程
+}
+
+//快速排序(从大到小)
+void quickSort_2(int *arr, int left, int right)
+{
+	int i, j, temp;
+	if (left >= right)
+		return;
+	temp = arr[left]; //temp中存的就是基准数
+	i = left;
+	j = right;
+	while (i != j)
+	{ //顺序很重要，要先从右边开始找
+		while (arr[j] <= temp && i < j)
+			j--;
+		while (arr[i] >= temp && i < j)//再找右边的
+			i++;
+		if (i < j)//交换两个数在数组中的位置
+		{
+			mySwap(&arr[i], &arr[j]);
+		}
+	}
+	//最终将基准数归位
+	arr[left] = arr[i];
+	arr[i] = temp;
+	quickSort_2(arr, left, i - 1);//继续处理左边的，这里是一个递归的过程
+	quickSort_2(arr, i + 1, right);//继续处理右边的 ，这里是一个递归的过程
+}
+
+//插入排序
+void insertSort(int *arr, int bgn, int end)
+{
+	for (int i = bgn + 1; i < end; ++i)
+	{
+		// 分为1,2两部分处理，可以囊括j = beg - 1时的情况
+		// 即需要将arr[i]插入到首元素前的位置，若使用一个for
+		// 包括这两部分，则会在发生这种情况时退出
+
+		//第一部分
+		int j = i - 1;
+		for (; j >= bgn; --j)
+			if (arr[j] <= arr[i])
+				break;
+		//第二部分
+		if (j != i - 1)
+		{
+			int temp = arr[i];
+			for (int k = i; k > j + 1; --k)
+			{
+				arr[k] = arr[k - 1];
+			}
+			arr[j + 1] = temp;
+		}
+	}
+}
+
+
 ///*希尔排序*/
 //void shellSort(int *arr, int bgn, int end)
 //{
