@@ -50,7 +50,7 @@ void selectSort_2(int *arr, int len)
 		// 找出最大值得元素下标
 		for (j = i + 1; j < len; j++)
 		{
-			if (arr[j] < arr[maxIndex])
+			if (arr[j] > arr[maxIndex])
 			{
 				maxIndex = j;
 			}			

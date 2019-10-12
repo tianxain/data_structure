@@ -7,9 +7,9 @@ int main()
 	printf("排  序  前：");
 	Show(arr, arrLength);
 	selectSort_1(arr, arrLength);
-	printf("选择排序后：");
+	printf("选择排序(从小到大)：");
 	Show(arr, arrLength);
 	selectSort_2(arr, arrLength);
-	printf("选择排序后：");
+	printf("选择排序(从大到小)：");
 	Show(arr, arrLength);
 }
