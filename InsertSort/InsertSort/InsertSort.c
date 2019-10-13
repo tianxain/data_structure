@@ -22,7 +22,7 @@ void mySwap(int *pa, int *pb)
 }
 
 //直接插入排序(从小到大)
-void insertSort_1(int *arr, int len) 
+void insertSort_1(int *arr, int len)
 {
 	int temp, i, j;
 	for (i = 1; i < len; i++)
@@ -61,10 +61,29 @@ void insertSort_2(int *arr, int len)
 //折半插入排序
 void binaryInsertSort(int *arr, int len)
 {
-	int i, j, temp;
+	int i, temp, j;
+	int low, high, mid;
 	for (i = 1; i < len; i++)
 	{
-		temp = arr[i];
-		int low, high, mid;
+		temp = arr[i]; //将要插入的元素拷贝一份
+		low = 0, high = i - 1;
+		while (low <= high) //在［ｌ．．．ｈ］　中寻找插入的位置
+		{
+			mid = (low + high) / 2;  //折半
+	   if (arr[mid] <= temp)
+			   {
+				  low = mid + 1;     //插在高半区 
+		  }
+		  else {
+				   high = mid - 1;    //插在低半区
+
+}
+		}
+		for (j = i - 1; j >= high + 1; --j) //腾出high+1的位置
+		{
+			arr[j + 1] = arr[j];   //记录后移
+		}
+		arr[high + 1] = temp;
+
 	}
 }
