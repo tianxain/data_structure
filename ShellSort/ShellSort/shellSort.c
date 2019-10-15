@@ -22,24 +22,32 @@ void mySwap(int *pa, int *pb)
 }
 
 //希尔排序
-int shellsort(int *arr, int len)    /* 自定义函数 shsort()*/
+void shellSort(int *arr, int len)
 {
-	int i, j, d;
-	d = len / 2;    /*确定固定增虽值*/
-	while (d >= 1)
+	int increment = (len / 3) + 1;//初始化增量值
+	int temp = 0;
+	int i, j;
+	for (increment ; increment > 0; increment = (increment / 3) + 1)
 	{
-		for (i = d + 1; i <= len; i++)    /*数组下标从d+1开始进行直接插入排序*/
+		//以increment为间隔分组
+		for ( i = 0; i < increment; i++)
 		{
-			arr[0] = arr[i];    /*设置监视哨*/
-			j = i - d;    /*确定要进行比较的元素的最右边位置*/
-			while ((j > 0) && (arr[0] < arr[j]))
+			//对每一个分组进行插入排序
+			for (j = i + increment; j < len; j += increment)
 			{
-				arr[j + d] = arr[j];    /*数据右移*/
-				j = j - d;    /*向左移d个位置V*/
+				if (arr[j] < arr[j - increment])
+				{
+					temp = arr[j];//哨兵
+					int k = j - increment;
+					while (k >= 0 && arr[k] > temp)
+					{
+						arr[k + increment] = arr[k];
+						k = k - increment;
+					}
+					//把挪出来的空位，放入temp
+					arr[k + increment] = temp;
+				}
 			}
-			arr[j + d] = arr[0];    /*在确定的位罝插入s[i]*/
 		}
-		d = d / 2;    /*增里变为原来的一半*/
 	}
-	return 0;
 }

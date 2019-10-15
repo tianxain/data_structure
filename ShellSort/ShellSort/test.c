@@ -7,7 +7,7 @@ int main()
 	printf("ÅÅ      Ðò      Ç°£º");
 	Show(arr, arrLength);
 	printf("Ï£   ¶û    ÅÅ   Ðò£º");
-	shellsort(arr, arrLength);
+	shellSort(arr, arrLength);
 	Show(arr, arrLength);
 
 }

@@ -7,4 +7,4 @@ void Show(int *arr, int len);
 void mySwap(int *pa, int *pb);
 
 //Ï£¶ûÅÅĞò
-int shellsort(int *arr, int len);
+void shellSort(int *arr, int len);
