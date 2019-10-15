@@ -221,34 +221,65 @@ void insertSort(int *arr, int bgn, int end)
 }
 
 
-///*希尔排序*/
-//void shellSort(int *arr, int bgn, int end)
-//{
-//	for (int step = (end - bgn) / 2; step > 0; step /= 2)
-//	{
-//		for (int i = bgn; i < step; ++i)
-//		{
-//			/*
-//			* 以下，insertSort的变异
-//			*/
-//			for (int j = i + step; j < end; j += step)
-//			{
-//				int k = j - step;
-//				for (; k >= i; k -= step)
-//					if (arr[k] <= arr[j])
-//						break;
-//				if (k != j - step)
-//				{
-//					int tmp = arr[j];
-//					for (int m = j; m > k + step; m -= step)
-//						arr[m] = arr[m - step];
-//					arr[k + step] = tmp;
-//				}
-//			}
-//		}
-//	}
-//}
-//
+//希尔排序
+void shellSort(int *arr, int bgn, int end)
+{
+	for (int step = (end - bgn) / 2; step > 0; step /= 2)
+	{
+		for (int i = bgn; i < step; ++i)
+		{
+			/*
+			* 以下，insertSort的变异
+			*/
+			for (int j = i + step; j < end; j += step)
+			{
+				int k = j - step;
+				for (; k >= i; k -= step)
+					if (arr[k] <= arr[j])
+						break;
+				if (k != j - step)
+				{
+					int tmp = arr[j];
+					for (int m = j; m > k + step; m -= step)
+						arr[m] = arr[m - step];
+					arr[k + step] = tmp;
+				}
+			}
+		}
+	}
+}
+
+//希尔排序
+void shellSort(int *arr, int len)
+{
+	int increment = (len / 3) + 1;//初始化增量值
+	int temp = 0;
+	int i, j;
+	for (increment; increment > 0; increment = (increment / 3) + 1)
+	{
+		//以increment为间隔分组
+		for (i = 0; i < increment; i++)
+		{
+			//对每一个分组进行插入排序
+			for (j = i + increment; j < len; j += increment)
+			{
+				if (arr[j] < arr[j - increment])
+				{
+					temp = arr[j];//哨兵
+					int k = j - increment;
+					while (k >= 0 && arr[k] > temp)
+					{
+						arr[k + increment] = arr[k];
+						k = k - increment;
+					}
+					//把挪出来的空位，放入temp
+					arr[k + increment] = temp;
+				}
+			}
+		}
+	}
+}
+
 ///*桶排序*/
 //void bucketSort(int *arr)
 //{

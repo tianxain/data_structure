@@ -29,6 +29,8 @@ void insertSort_2(int *arr, int bgn, int end);//(´Ó´óµ½Ğ¡)
 
 /*Ï£¶ûÅÅĞò*/
 void shellSort(int *arr, int bgn, int end);
+//Ï£¶ûÅÅĞò
+void shellSort(int *arr, int len)£»
 
 /*Í°ÅÅĞò*/
 void bucketSort(int *arr);
