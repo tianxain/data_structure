@@ -1,0 +1,4 @@
+﻿  Test.c
+e:\github\myrepository\data_structure\seqlist\seqlist\test.c(2): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+e:\github\myrepository\data_structure\seqlist\seqlist\test.c(14): warning C4018: “<”: 有符号/无符号不匹配
+  SeqList.vcxproj -> E:\GitHub\MyRepository\data_structure\SeqList\Debug\SeqList.exe
