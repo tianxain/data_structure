@@ -1,2 +1,2 @@
 ﻿  Test.c
-e:\github\myrepository\data_structure\slist\slist\test.c(7): error C4700: 使用了未初始化的局部变量“list”
+  SList.vcxproj -> E:\GitHub\MyRepository\data_structure\SList\Debug\SList.exe
