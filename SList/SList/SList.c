@@ -11,10 +11,6 @@ void SListPrint(SListNode* pList)
 	printf("NULL\n");
 }
 
-void SListInit(SList* plist)
-{
-	plist->_head->_next=NULL;
-}
 
 SListNode* NewSListNode(SLTDataType x)
 {
@@ -98,23 +94,55 @@ void SListPopFront(SListNode** ppList)
 	}
 }
 
-SListNode* SListFind(SList* plist, SLTDataType x)
+SListNode* SListFind(SListNode* pList, SLTDataType x)
 {
-
+	SListNode* cur = pList;
+	while (cur)
+	{
+		if (cur->_data == x)
+		{
+			return cur;
+		}
+		cur = cur->_next;
+	}
+	return NULL;
 }
 
+
 void SListInsertAfter(SListNode* pos, SLTDataType x)
+{
+	assert(pos);
+	SListNode* next = pos->_next;
+	SListNode* newNode = NewSListNode(x);
+	pos->_next = newNode;
+	newNode->_next = next;
+}
+void SListInsertBefore(SListNode* pos, SLTDataType x)
 {
 
 }
 
 void SListEraseAfter(SListNode* pos)
 {
-
+	assert(pos);
+	SListNode* next = pos->_next;
+	if (next != NULL)
+	{
+        SListNode* nextnext = next->_next;
+	    free(next);
+	    pos->_next = nextnext;
+	}
 }
-void SListRemove(SList* plist, SLTDataType x)
+void SListEraseBefore(SListNode* pos)
 {
 
 }
+
+void SListRemove(SListNode* pList, SLTDataType x)
+{
+
+}
+
+
 
 
