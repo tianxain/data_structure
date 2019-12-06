@@ -1,0 +1,16 @@
+﻿  Test.c
+e:\github\myrepository\data_structure\queue\queue\test.c(7): warning C4047: “函数”:“Queue *”与“Queue **”的间接级别不同
+e:\github\myrepository\data_structure\queue\queue\test.c(7): warning C4024: “QueueInit”: 形参和实参 1 的类型不同
+e:\github\myrepository\data_structure\queue\queue\test.c(8): warning C4047: “函数”:“Queue *”与“Queue **”的间接级别不同
+e:\github\myrepository\data_structure\queue\queue\test.c(8): warning C4024: “QueuePush”: 形参和实参 1 的类型不同
+e:\github\myrepository\data_structure\queue\queue\test.c(9): warning C4047: “函数”:“Queue *”与“Queue **”的间接级别不同
+e:\github\myrepository\data_structure\queue\queue\test.c(9): warning C4024: “QueuePush”: 形参和实参 1 的类型不同
+e:\github\myrepository\data_structure\queue\queue\test.c(10): warning C4047: “函数”:“Queue *”与“Queue **”的间接级别不同
+e:\github\myrepository\data_structure\queue\queue\test.c(10): warning C4024: “QueuePush”: 形参和实参 1 的类型不同
+e:\github\myrepository\data_structure\queue\queue\test.c(11): warning C4047: “函数”:“Queue *”与“Queue **”的间接级别不同
+e:\github\myrepository\data_structure\queue\queue\test.c(11): warning C4024: “QueuePush”: 形参和实参 1 的类型不同
+e:\github\myrepository\data_structure\queue\queue\test.c(12): warning C4047: “函数”:“Queue *”与“Queue **”的间接级别不同
+e:\github\myrepository\data_structure\queue\queue\test.c(12): warning C4024: “QueueEmpty”: 形参和实参 1 的类型不同
+e:\github\myrepository\data_structure\queue\queue\test.c(15): warning C4047: “函数”:“Queue *”与“Queue **”的间接级别不同
+e:\github\myrepository\data_structure\queue\queue\test.c(15): warning C4024: “QueuePop”: 形参和实参 1 的类型不同
+  Queue.vcxproj -> E:\GitHub\MyRepository\data_structure\Queue\Debug\Queue.exe
