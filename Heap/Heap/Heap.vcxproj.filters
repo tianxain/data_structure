@@ -15,19 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="test.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="sort.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="lk.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="sort.h">
+    <ClInclude Include="Heap.h">
       <Filter>头文件</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Heap.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Test.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{65E2CA0D-CEA7-40F7-B95D-281F6AC1A61E}</ProjectGuid>
-    <RootNamespace>Sort</RootNamespace>
+    <ProjectGuid>{33E3199F-C54E-442F-B0C5-39912FC52F7A}</ProjectGuid>
+    <RootNamespace>Heap</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -77,6 +77,9 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -115,12 +118,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="lk.c" />
-    <ClCompile Include="sort.c" />
-    <ClCompile Include="test.c" />
+    <ClInclude Include="Heap.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="sort.h" />
+    <ClCompile Include="Heap.c" />
+    <ClCompile Include="Test.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
